@@ -1,0 +1,30 @@
+{{outlet}}
+
+<p>Click {{#link-to 'new-order' class="button"}}
+here
+{{/link-to}}
+to create a new order.</p>
+
+
+<table style="width:100%">
+  <tr>
+    <th>Item</th>
+    <th>Quantity</th> 
+    <th>Price [€]</th>
+    <th>Subtotal</th>
+    
+  </tr>
+
+  {{#each model.order as |beer|}}
+  <tr>
+    <td>{{beer.beerTitle}}</td>
+    <td>{{beer.quantity}}</td> 
+    <td>{{beer.price}}</td>
+    <td class=><{{multiply beer.quantity beer.price }}</td>
+
+  </tr>
+  {{/each}}
+
+ <h1>Total: €</h1>
+  
+</table>

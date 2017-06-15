@@ -1,0 +1,61 @@
+{{outlet}}
+
+<form id="myForm"> 
+
+  <div class="form-container">
+    <div class="form-wrapper">
+      
+      <label for="name_">Select beer from dropdown: </label>
+
+        
+        <select id="productTitleDropDown">
+         {{#each model.entry as |item|}} 
+            <option>{{item.productTitle}}</option>
+          {{/each}}
+        </select>
+        
+
+        <!-- http://www.ember-doc.com/classes/Ember.Select.html 
+
+        -->
+    
+
+      <label class="lower-label">Quantity: </label>
+        <div>
+          {{input class='form-control' name="noOfBeers" id="quantity"}}
+        </div>
+    
+    </div>
+
+    <div class="button-group">
+     
+       <button {{action "saveItem"}} >Confirm</button>
+       <button {{action "checkout"}} >Checkout</button>
+
+
+       <button> {{#link-to 'order-list'}} Porceed to checkout {{/link-to}}
+        </button>
+      
+    </div>
+  
+  </div>
+ 
+</form> 
+
+
+<table style="width:100%">
+  <tr>
+    <th>Item</th>
+    <th>Quantity</th> 
+    <th>Subtotal</th>
+  </tr>
+  {{#each model.order as |beer|}}
+  <tr>
+    <td>{{beer.beerTitle}}</td>
+    <td>{{beer.quantity}}</td> 
+    <td><{{multiply beer.quantity beer.price }}</td>
+  </tr>
+  {{/each}}
+  
+</table>
+

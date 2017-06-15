@@ -1,0 +1,23 @@
+{{outlet}}
+
+Click {{#link-to 'new-entry' class='button'}}
+here
+{{/link-to}}
+to create a new entry.
+
+{{#each model.entry as |beer|}}
+	<article class="beer-listing">
+
+		<h3>{{beer.productTitle}}</h3>
+
+		<img src="{{beer.itemImage}}" alt="" height="42" width="42">
+	    <div class="beer stock">
+	      <span>Stock:</span> {{beer.stock}}
+	    </div>
+	    <div class="beer price">
+	      <span>Price:</span> {{beer.price}}
+	    </div>
+	</article>
+
+{{/each}}
+

@@ -1,0 +1,51 @@
+{{outlet}}
+
+<div class="new-entry-container">
+	<form id="entryForm">
+	<h4>Enter a new item</h4>
+		<form class="new-entry">
+			<label class="entry-item">1. Product title:</label>
+			{{input id="productTitle" type="text" class="product-title" placeholder="e.g. Budweiser 0.3l"}}
+			
+			
+			<label class="entry-item">2. Stock:</label>
+			{{input id="stock" type="text" class="product-stock"}} 
+			
+			
+			<label class="entry-item">3. Price: </label>
+			{{input id="price" type="text" class="product-price"}}
+
+			<label class="entry-item">4.Upload image:</label>
+			{{input id="itemImage" type="file"}}
+
+			<button {{action "saveEntry" post}} type="submit" class="save-entry">Save</button>
+			
+		</form>
+
+		{{#each model.entry as |item|}}
+
+			<article class="beer-listing">
+
+				<h3>{{item.productTitle}}</h3>
+
+				<img src="{{item.itemImage}}" alt="" height="42" width="42">
+			    <div class="beer stock">
+			      <span>Stock:</span> {{item.stock}}
+			    </div>
+			    <div class="beer price">
+			      <span>Price:</span> {{item.price}}
+			    </div>
+			</article>
+
+		{{/each}}
+
+
+		{{#link-to 'entry-list' class="button new-entry-button"}}
+		 See list of all beers in stock
+		{{/link-to}}
+	</form>
+
+</div>
+
+
+

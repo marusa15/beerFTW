@@ -1,0 +1,43 @@
+@import 'create-order.css';
+@import 'normalize.css';
+
+@import 'new-entry.css';
+
+/* front page style */
+
+header > .container {
+	background-color: #d69c37;
+	height: 250px;
+	border-radius: 10px;
+
+	
+}
+
+.headline {
+	margin: 0 auto;
+	max-width: 300px;
+	color: #875d15;
+	padding-top: 100px;
+	
+}
+
+.wrapper-navigation {
+	margin: 0 auto;
+	max-width: 450px;
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+
+.menu-item {
+	margin-right: 20px;
+	padding: 7px;
+	border-radius: 5px;
+	background-color: #d69c37
+
+	
+}
+
+.menu-item a {
+	text-decoration: none;
+	color: #875d15;
+}

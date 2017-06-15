@@ -1,0 +1,12 @@
+#entryForm {
+	margin: 0 auto;
+	max-width: 1100px;
+}
+
+.entry-item, .new-entry input {
+	margin-bottom: 5px;
+}
+
+.new-entry-button {
+	margin-top: 10px;
+}
