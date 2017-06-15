@@ -7,8 +7,11 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('new-entry', function() {
+  	this.route('entry-list');
+  });		
   this.route('new-order');
-  this.route('new-entry');
+  
   this.route('entry-list');
   this.route('order-list');
 });

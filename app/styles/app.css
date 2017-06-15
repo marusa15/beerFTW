@@ -1,11 +1,11 @@
 @import 'create-order.css';
 @import 'normalize.css';
-
+@import 'float-grid.css';
 @import 'new-entry.css';
 
-/* front page style */
+/* styles for the header on all pages */
 
-header > .container {
+.container {
 	background-color: #d69c37;
 	height: 250px;
 	border-radius: 10px;
@@ -13,9 +13,13 @@ header > .container {
 	
 }
 
+.container {
+	margin: 10px;
+}
+
 .headline {
 	margin: 0 auto;
-	max-width: 300px;
+	max-width: 350px;
 	color: #875d15;
 	padding-top: 100px;
 	

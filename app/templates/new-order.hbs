@@ -4,27 +4,26 @@
 
   <div class="form-container">
     <div class="form-wrapper">
-      
-      <label for="name_">Select beer from dropdown: </label>
+      <row>
+        <col-6>
+          <label for="name_">Select beer from dropdown: </label>
 
         
-        <select id="productTitleDropDown">
-         {{#each model.entry as |item|}} 
-            <option>{{item.productTitle}}</option>
-          {{/each}}
-        </select>
-        
+            <select id="productTitleDropDown">
+             {{#each model.entry as |item|}} 
+                <option>{{item.productTitle}}</option>
+              {{/each}}
+            </select>
+          </col-6>
 
-        <!-- http://www.ember-doc.com/classes/Ember.Select.html 
-
-        -->
-    
-
-      <label class="lower-label">Quantity: </label>
-        <div>
-          {{input class='form-control' name="noOfBeers" id="quantity"}}
-        </div>
-    
+            
+         <col-6> 
+          <label class="lower-label">Quantity: </label>
+            <div>
+              {{input class='form-control' name="noOfBeers" id="quantity"}}
+            </div>
+          </col-6>
+        </row>
     </div>
 
     <div class="button-group">
@@ -33,7 +32,7 @@
        <button {{action "checkout"}} >Checkout</button>
 
 
-       <button> {{#link-to 'order-list'}} Porceed to checkout {{/link-to}}
+       <button> {{#link-to 'order-list'}} Proceed to checkout {{/link-to}}
         </button>
       
     </div>

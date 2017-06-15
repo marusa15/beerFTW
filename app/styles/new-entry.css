@@ -1,4 +1,22 @@
-#entryForm {
+
+
+
+.new-entry {
+	border: 2px solid;
+    margin: 0 auto;
+   
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.save-entry {
+	border-color: #875d15;
+	color: #875d15;
+	background-color: #e5d490;
+}
+
+#entry-form {
 	margin: 0 auto;
 	max-width: 1100px;
 }
@@ -9,4 +27,14 @@
 
 .new-entry-button {
 	margin-top: 10px;
+
 }
+
+.intro {
+	margin: 0 auto;
+    max-width: 450px;
+	border: 2px solid #875d15;
+    border-radius: 10px;
+    padding: 10px 30px;
+    background-color: #e5d490;
+ }

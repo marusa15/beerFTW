@@ -1,11 +1,10 @@
 {{outlet}}
 
-Click {{#link-to 'new-entry' class='button'}}
-here
-{{/link-to}}
-to create a new entry.
 
 {{#each model.entry as |beer|}}
+
+	<row>
+	<div class="col-3">
 	<article class="beer-listing">
 
 		<h3>{{beer.productTitle}}</h3>
@@ -18,6 +17,8 @@ to create a new entry.
 	      <span>Price:</span> {{beer.price}}
 	    </div>
 	</article>
+	</div>
+	</row>
 
 {{/each}}
 

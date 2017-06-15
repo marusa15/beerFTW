@@ -1,29 +1,45 @@
 {{outlet}}
 
+<div class="intro">
+	<h2>Hello, Primož!</h2>
+
+	<p>Welcome to your super trouper beer shop app!</p>
+	<p>Please start by adding some beers to the inventory!</p>
+</div>
+
 <div class="new-entry-container">
-	<form id="entryForm">
-	<h4>Enter a new item</h4>
+	<form id="entry-form">
+	
 		<form class="new-entry">
-			<label class="entry-item">1. Product title:</label>
-			{{input id="productTitle" type="text" class="product-title" placeholder="e.g. Budweiser 0.3l"}}
+			<div class="row first-line">
+      			<div class="col-3">
+					
+					{{input id="productTitle" type="text" class="product-title" placeholder="Beer name"}}
+				</div>
+				<div class="col-3">	
+					
+					
+					{{input id="stock" type="text" placeholder="Beer stock" class="product-stock"}} 
+				</div>
+				<div class="col-3">					
+					
+					{{input id="price" type="text" class="product-price" placeholder="Beer price [€]"}}
+				</div>
 			
+				<div class="col-3">	
 			
-			<label class="entry-item">2. Stock:</label>
-			{{input id="stock" type="text" class="product-stock"}} 
-			
-			
-			<label class="entry-item">3. Price: </label>
-			{{input id="price" type="text" class="product-price"}}
+					{{input id="itemImage" type="text" placeholder="Beer Image"}}
+				</div>	
+			</div>	
 
-			<label class="entry-item">4.Upload image:</label>
-			{{input id="itemImage" type="file"}}
-
-			<button {{action "saveEntry" post}} type="submit" class="save-entry">Save</button>
+			<button {{action "saveEntry" post}} type="submit" class="save-entry">Add another</button>
 			
 		</form>
 
 		{{#each model.entry as |item|}}
 
+			<row>
+			<div class="col-3">
 			<article class="beer-listing">
 
 				<h3>{{item.productTitle}}</h3>
@@ -36,13 +52,13 @@
 			      <span>Price:</span> {{item.price}}
 			    </div>
 			</article>
+			</div>
+			</row>
 
 		{{/each}}
 
 
-		{{#link-to 'entry-list' class="button new-entry-button"}}
-		 See list of all beers in stock
-		{{/link-to}}
+		
 	</form>
 
 </div>
