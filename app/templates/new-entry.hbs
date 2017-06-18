@@ -8,9 +8,9 @@
 </div>
 
 <div class="new-entry-container">
-	<form id="entry-form">
+	<div id="entry-form">
 	
-		<form class="new-entry">
+		<form id="new-entry">
 			<div class="row first-line">
       			<div class="col-3">
 					
@@ -36,11 +36,13 @@
 			
 		</form>
 
+		{{outlet}}
+
 		{{#each model.entry as |item|}}
 
 			<row>
 			<div class="col-3">
-			<article class="beer-listing">
+			<article action="refreshData" class="beer-listing">
 
 				<h3>{{item.productTitle}}</h3>
 
@@ -59,7 +61,7 @@
 
 
 		
-	</form>
+	</div>
 
 </div>
 

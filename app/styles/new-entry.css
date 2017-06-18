@@ -1,7 +1,7 @@
 
 
 
-.new-entry {
+#new-entry {
 	border: 2px solid;
     margin: 0 auto;
    
@@ -21,7 +21,7 @@
 	max-width: 1100px;
 }
 
-.entry-item, .new-entry input {
+.entry-item, #new-entry input {
 	margin-bottom: 5px;
 }
 

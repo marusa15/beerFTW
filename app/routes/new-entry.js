@@ -41,7 +41,7 @@ export default Ember.Route.extend({
 			var retrievedObject = sessionStorage.getItem('entry');
 			console.log('retrievedObject: ', JSON.parse(retrievedObject));
 			console.log(sessionStorage);
-			document.getElementById("entryForm").reset();
+			document.getElementById("new-entry").reset();
 			location.reload();
 
 

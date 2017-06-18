@@ -10,7 +10,9 @@ Router.map(function() {
   this.route('new-entry', function() {
   	this.route('entry-list');
   });		
-  this.route('new-order');
+  this.route('new-order', function(){
+  	this.route('test');
+  });
   
   this.route('entry-list');
   this.route('order-list');

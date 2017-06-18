@@ -28,11 +28,12 @@ export default Ember.Route.extend({
 			newOrder.beerTitle = e.options[e.selectedIndex].text;
 	    	newOrder.quantity = document.getElementById("quantity").value;
 	    	newOrder.price = JSON.parse(sessionStorage.entry)[beerIndex].price;
-	    	console.log(JSON.parse(sessionStorage.entry)[beerIndex].stock);
-	    	console.log(JSON.parse(sessionStorage.order)[beerIndex].quantity);
+	    	newOrder.subtotal = newOrder.price * newOrder.quantity;
+	    //	console.log(JSON.parse(sessionStorage.entry)[beerIndex].stock);
+	    	console.log("subtotal", newOrder.subtotal);
 
 	    	JSON.parse(sessionStorage.entry)[beerIndex].stock == JSON.parse(sessionStorage.entry)[beerIndex].stock - 5;
-	    	console.log(JSON.parse(sessionStorage.entry)[beerIndex].stock);
+	    //	console.log(JSON.parse(sessionStorage.entry)[beerIndex].stock);
 	    	
 
 	    	if(sessionStorage.order)
@@ -51,10 +52,14 @@ export default Ember.Route.extend({
 			    
 			    document.getElementById("myForm").reset();
 
-			console.log(JSON.parse(sessionStorage.order)[beerIndex].quantity);
+			console.log(JSON.parse(sessionStorage.order));
 
-	    	JSON.parse(sessionStorage.entry)[beerIndex].stock = JSON.parse(sessionStorage.entry)[beerIndex].stock - JSON.parse(sessionStorage.order)[beerIndex].quantity;
-	    	console.log(JSON.parse(sessionStorage.entry)[beerIndex].stock);
+			
+			
+			
+		//	location.reload();
+	    /*	JSON.parse(sessionStorage.entry)[beerIndex].stock = JSON.parse(sessionStorage.entry)[beerIndex].stock - JSON.parse(sessionStorage.order)[beerIndex].quantity;
+	    	console.log(JSON.parse(sessionStorage.entry)[beerIndex].stock); */
 
 			    
      		},
@@ -65,12 +70,8 @@ export default Ember.Route.extend({
 	     	
 	     },
 
-	     checkout() {
-	     	var decreaseStock = function(beerIndex) {
-  				console.log(beerIndex);
-}
-	     }
-
 	     
-	    }
+	    
+	     
+	}
 });

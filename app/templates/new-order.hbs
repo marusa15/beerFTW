@@ -1,60 +1,57 @@
 {{outlet}}
 
-<form id="myForm"> 
 
-  <div class="form-container">
-    <div class="form-wrapper">
-      <row>
-        <col-6>
-          <label for="name_">Select beer from dropdown: </label>
+ 
+<div class="row form-container">
+  
+  
+  <div class="col-6 form-wrapper">
+    <form id="myForm">
+      <div class="row">
 
-        
+        <div class="col-6">
+            <label class="label-order" for="name_">Select beer from dropdown: </label>
+      
             <select id="productTitleDropDown">
              {{#each model.entry as |item|}} 
                 <option>{{item.productTitle}}</option>
               {{/each}}
             </select>
-          </col-6>
-
+        </div>
+          
+        <div class="col-6"> 
+              <label class="lower-label">Quantity: </label>
             
-         <col-6> 
-          <label class="lower-label">Quantity: </label>
-            <div>
               {{input class='form-control' name="noOfBeers" id="quantity"}}
-            </div>
-          </col-6>
-        </row>
+              <button {{action "saveItem"}} >Confirm</button>
+        </div>
+
+      </div>
+     </form>  
     </div>
-
-    <div class="button-group">
-     
-       <button {{action "saveItem"}} >Confirm</button>
-       <button {{action "checkout"}} >Checkout</button>
+   
 
 
-       <button> {{#link-to 'order-list'}} Proceed to checkout {{/link-to}}
-        </button>
-      
-    </div>
-  
+  <div class="col-6">
+    
+    
   </div>
- 
-</form> 
+</div>
 
+<table>
+      <tr>
+        <th>Item</th>
+        <th>Quantity</th> 
+        <th>Subtotal</th>
+      </tr>
+      <p>whatever</p>
+      {{#each model.order as |item|}}
+        <tr>
 
-<table style="width:100%">
-  <tr>
-    <th>Item</th>
-    <th>Quantity</th> 
-    <th>Subtotal</th>
-  </tr>
-  {{#each model.order as |beer|}}
-  <tr>
-    <td>{{beer.beerTitle}}</td>
-    <td>{{beer.quantity}}</td> 
-    <td><{{multiply beer.quantity beer.price }}</td>
-  </tr>
-  {{/each}}
-  
-</table>
-
+          <td>{{item.beerTitle}}</td>
+          <td>{{item.quantity}}</td> 
+          <td>{{multiply item.quantity item.price }}</td>
+        </tr>
+      {{/each}}
+      
+    </table>

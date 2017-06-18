@@ -2,6 +2,7 @@
 @import 'normalize.css';
 @import 'float-grid.css';
 @import 'new-entry.css';
+@import 'order-list.css';
 
 /* styles for the header on all pages */
 
@@ -9,13 +10,10 @@
 	background-color: #d69c37;
 	height: 250px;
 	border-radius: 10px;
-
-	
-}
-
-.container {
 	margin: 10px;
 }
+
+
 
 .headline {
 	margin: 0 auto;
