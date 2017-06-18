@@ -2,56 +2,37 @@
 
 
  
-<div class="row form-container">
+<div class="form-container">
   
-  
-  <div class="col-6 form-wrapper">
-    <form id="myForm">
-      <div class="row">
 
-        <div class="col-6">
-            <label class="label-order" for="name_">Select beer from dropdown: </label>
+  <div class="form-wrapper">
+    <form id="order-form">
       
-            <select id="productTitleDropDown">
+
+        
+            <label class="label-order order-item" for="name_">Select beer from dropdown: </label>
+      
+            <select id="productTitleDropDown" class="order-item">
              {{#each model.entry as |item|}} 
                 <option>{{item.productTitle}}</option>
               {{/each}}
             </select>
-        </div>
+        
           
-        <div class="col-6"> 
-              <label class="lower-label">Quantity: </label>
+        
+              <label class="lower-label order-item">Quantity: </label>
             
-              {{input class='form-control' name="noOfBeers" id="quantity"}}
-              <button {{action "saveItem"}} >Confirm</button>
-        </div>
-
-      </div>
+              {{input class="form-control order-item" name="noOfBeers" id="quantity"}}
+              
+              <button class="order-item" {{action "saveItem"}} >Confirm</button>
+        
+      
      </form>  
-    </div>
-   
+   </div>
+
+   <button class="proceed-to-checkout"> {{#link-to 'order-list'}}See all items in order and proceed to checkout {{/link-to}}</button>
 
 
-  <div class="col-6">
-    
-    
-  </div>
 </div>
 
-<table>
-      <tr>
-        <th>Item</th>
-        <th>Quantity</th> 
-        <th>Subtotal</th>
-      </tr>
-      <p>whatever</p>
-      {{#each model.order as |item|}}
-        <tr>
 
-          <td>{{item.beerTitle}}</td>
-          <td>{{item.quantity}}</td> 
-          <td>{{multiply item.quantity item.price }}</td>
-        </tr>
-      {{/each}}
-      
-    </table>

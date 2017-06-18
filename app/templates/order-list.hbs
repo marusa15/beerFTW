@@ -8,6 +8,7 @@
       <th>Quantity</th> 
       <th>Price [€]</th>
       <th>Subtotal</th>
+      <th>Total [€]</th>
       
     </tr>
 
@@ -16,15 +17,20 @@
       <td>{{beer.beerTitle}}</td>
       <td>{{beer.quantity}}</td> 
       <td>{{beer.price}}</td>
-      <td id="subtotal"><{{multiply beer.quantity beer.price }}</td>
+      <td><{{multiply beer.quantity beer.price }}</td>
+      <td></td>
 
     </tr>
     {{/each}}
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><button {{action "computeTotal"}} >Refresh to get the final sum</button></td>
+        <td>{{model.total}}</td>
+    </tr>
   </table>
-  <div class="button-order-list">
-    <button {{action "computeTotal"}} >Total</button>
-    <h1>Total: {{model.total}}€</h1>
-  </div>
+ 
 </div>
 
   

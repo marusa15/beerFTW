@@ -23,6 +23,7 @@ export default Ember.Route.extend({
             sessionStorage.setItem("total", sum);
             console.log(sessionStorage);
             console.log('sum', sum);
+            location.reload();
      	}
      }   
 });

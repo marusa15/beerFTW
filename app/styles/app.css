@@ -6,25 +6,34 @@
 
 /* styles for the header on all pages */
 
+.icon-image {
+	height: 30px;
+	width: 35px;
+	color: black;
+	margin-right: 10px;
+}
 .container {
 	background-color: #d69c37;
-	height: 250px;
+	height: 100px;
 	border-radius: 10px;
 	margin: 10px;
 }
 
+.headline, .container-navigation {
+	display: inline-block;
+} 
+
 
 
 .headline {
-	margin: 0 auto;
+	margin: 30px 20px 20px;
 	max-width: 350px;
-	color: #875d15;
-	padding-top: 100px;
 	
+
 }
 
 .wrapper-navigation {
-	margin: 0 auto;
+
 	max-width: 450px;
 	margin-top: 20px;
 	margin-bottom: 30px;
@@ -33,7 +42,7 @@
 .menu-item {
 	margin-right: 20px;
 	padding: 7px;
-	border-radius: 5px;
+	
 	background-color: #d69c37
 
 	
@@ -41,5 +50,11 @@
 
 .menu-item a {
 	text-decoration: none;
-	color: #875d15;
+	color: black;
 }
+
+@media (max-width: 875px) {
+	.container-navigation {
+		display: none;
+	}
+ }

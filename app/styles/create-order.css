@@ -1,26 +1,38 @@
+@import 'normalize.css';
 label, input {
 	display: block;
 	margin-bottom: 5px;
 } 
 
-/*.form-container {
-	
-	margin: 0 auto;
-	max-width: 450px;
-	border: 2px solid #875d15;
-	border-radius: 10px;
-}
-*/
-.form-wrapper {
-	margin-left: 100px;
-	max-width: 200px;
+#order-form {
+	padding: 30px;
 }
 
-.form-container > * {
-	
-	margin: 0 auto;
+.proceed-to-checkout {
+	margin-left: 500px;
 	max-width: 450px;
+	text-decoration: none;
+	margin-top: 20px;
 }
+
+#quantity {
+	max-width: 50px;
+}
+
+.order-item {
+	display: inline-block;
+	margin-right: 20px;
+}
+
+
+.form-wrapper {
+	margin: 0 auto;
+	max-width: 900px;
+	border: 2px solid;
+    border-radius: 10px;
+}
+
+
 
 .upper-label {
 	margin-top: 30px;

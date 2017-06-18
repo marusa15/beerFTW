@@ -1,21 +1,23 @@
 <header>
   <div class="container">
     <h1 class="headline">       
-        Primoz's Beer Shop
+        <span><img class="icon-image" src="https://d30y9cdsu7xlg0.cloudfront.net/png/24239-200.png"></span>Primoz's Beer Shop
     </h1>
     <div class="container-navigation">
       <div class="wrapper-navigation">
         
+        
+        <button class="menu-item">
+          {{#link-to 'new-entry'}}
+            New entry  
+          {{/link-to}}
+        </button>
+
         <button class="menu-item">
           {{#link-to 'new-order'}}
             Create order  
           {{/link-to}}
 
-        </button>
-        <button class="menu-item">
-          {{#link-to 'new-entry'}}
-            New entry  
-          {{/link-to}}
         </button>
 
         <button class="menu-item">

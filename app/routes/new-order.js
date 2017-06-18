@@ -3,7 +3,8 @@ import Ember from 'ember';
 export default Ember.Route.extend({
 	model() {
 		if (sessionStorage.getItem('entry') !== null) {
-		    return { 
+		    return {
+		    	 
 		    	entry: JSON.parse(sessionStorage.entry)
 			}
 		}
@@ -11,7 +12,8 @@ export default Ember.Route.extend({
 		else if ((sessionStorage.getItem('entry') !== null) && (sessionStorage.getItem('order') !== null)) {
 			return {
 		    		order: JSON.parse(sessionStorage.order),
-		    		entry: JSON.parse(sessionStorage.entry)
+		    		entry: JSON.parse(sessionStorage.entry),
+		    		total: sessionStorage.total
 		    	}
 			}
 	},
@@ -50,28 +52,17 @@ export default Ember.Route.extend({
 			    
 			  
 			    
-			    document.getElementById("myForm").reset();
+			    document.getElementById("order-form").reset();
 
 			console.log(JSON.parse(sessionStorage.order));
 
 			
 			
 			
-		//	location.reload();
-	    /*	JSON.parse(sessionStorage.entry)[beerIndex].stock = JSON.parse(sessionStorage.entry)[beerIndex].stock - JSON.parse(sessionStorage.order)[beerIndex].quantity;
-	    	console.log(JSON.parse(sessionStorage.entry)[beerIndex].stock); */
+		
 
 			    
      		},
-
-	      
-	     anotherOrder() {
-	     	document.getElementById("myForm").reset();
-	     	
-	     },
-
-	     
-	    
-	     
+    
 	}
 });
