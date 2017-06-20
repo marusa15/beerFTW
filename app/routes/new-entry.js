@@ -20,14 +20,19 @@ export default Ember.Route.extend({
 
 		saveEntry() {
 			var entry = new Object();
-			var newEntry= new Object();
-			newEntry.productTitle = document.getElementById("productTitle").value;
-			
-			if (localStorage.clickcount) {
-			    newEntry.id = Number(localStorage.clickcount) + 1;
+			var newEntry = new Object();
+
+
+			if (sessionStorage.getItem('entry') !== null) {
+			    newEntry.id = (JSON.parse(sessionStorage.entry)).length + 1;
+
 			} else {
 			    newEntry.id = 1;
 			}
+
+			newEntry.productTitle = document.getElementById("productTitle").value; //ima drugačno vrednost z vsakim klikom
+			
+			
 			newEntry.stock = document.getElementById("stock").value;
 			newEntry.price = document.getElementById("price").value;
 			newEntry.itemImage = document.getElementById("itemImage").value;
@@ -53,9 +58,11 @@ export default Ember.Route.extend({
 
 
 		},
-		
 
-		
-	}
+		deleteEntry() {
+				
+			}
+		}
+	
 });
 
