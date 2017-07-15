@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'beer-ftw',
+    modulePrefix: 'beerFTW',
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
